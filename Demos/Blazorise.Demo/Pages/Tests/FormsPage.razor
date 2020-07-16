@@ -13,6 +13,12 @@
             </CardBody>
             <CardBody>
                 <Field Horizontal="true">
+                    <FieldLabel ColumnSize="ColumnSize.Is2">Value @value</FieldLabel>
+                    <FieldBody ColumnSize="ColumnSize.Is10">
+                        <NumericEdit TValue="double" @bind-Value="@value" DecimalsSeparator="," Placeholder="Some numeric value..." />
+                    </FieldBody>
+                </Field>
+                <Field Horizontal="true">
                     <FieldLabel ColumnSize="ColumnSize.Is2">Name</FieldLabel>
                     <FieldBody ColumnSize="ColumnSize.Is10">
                         <TextEdit Placeholder="Some text value..." />
@@ -454,6 +460,7 @@
     </Column>
 </Row>
 @code{
+    private double value;
     int[] numbers = { 1, 3, 4 };
 
     private DaysInWeek DaysInWeekLocal { get; set; } = DaysInWeek.Mon;
